@@ -95,13 +95,13 @@ This repository contains shell scripts for automating tasks related to C program
 1. **Clone the Repository**:
 
    ```bash
-   git clone https://github.com/yourusername/your-repo.git
+   git clone https://github.com/marekbielsky/sh-scripts.git
    ```
 
 2. **Navigate to the Directory**:
 
    ```bash
-   cd your-repo
+   cd sh-scripts
    ```
 
 3. **Run a Script**:
