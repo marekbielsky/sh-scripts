@@ -16,15 +16,16 @@ This repository contains shell scripts for automating tasks related to C program
 
 ### create_c_files.sh
 
-- **Description**: Automates the creation of C source and header files with a basic template.
+- **Description**: Automates the creation of multiple C source files with a basic template and compiles them.
 - **Usage**:
   ```bash
-  ./create_c_files.sh <filename>
+  ./create_c_files.sh <ps_number> <task_from> <task_to>
   ```
-  This script creates a C source file and a header file with the given filename.
+  This will create and compile C files named `zadanie<task_number>.c` in the directory `./ps<ps_number>/zadania/` for each task number in the specified range.
 - **Features**:
-  - Initializes a basic C program structure in the source file.
-  - Sets up include guards in the header file.
+  - Initializes a basic C program structure in each source file.
+  - Compiles each source file into an executable.
+  - Creates directories as needed to organize tasks by problem set number.
 
 ## Getting Started
 
