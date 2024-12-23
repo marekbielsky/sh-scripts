@@ -46,12 +46,12 @@ This repository contains shell scripts for automating tasks related to C program
      sudo apt-get install fswatch
      ```
 
-### create_c_files.sh
+### create_files.sh
 
 - **Description**: Automates the creation of multiple C source files with a basic template and compiles them.
 - **Usage**:
   ```bash
-  ./create_c_files.sh <ps_number> <task_from> <task_to>
+  ./create_files.sh <ps_number> <task_from> <task_to>
   ```
   This will create and compile C files named `zadanie<task_number>.c` in the directory `./ps<ps_number>/zadania/` for each task number in the specified range.
 - **Features**:

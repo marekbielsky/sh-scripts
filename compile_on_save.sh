@@ -1,15 +1,14 @@
 #!/bin/bash
 
-WATCH_FILE=$1
+WATCH_FILE=$(realpath "$1")
 FILE_NAME=$(basename "$WATCH_FILE" | cut -d '.' -f 1)
-
 
 if [ -z "$WATCH_FILE" ]; then
     echo "Usage: $0 <absolute_path_to_file>"
     exit 1
 fi
 
-DIR_PATH=$(echo $WATCH_FILE | rev | cut -d '/' -f 2- | rev)
+DIR_PATH=$(dirname "$WATCH_FILE")
 
 COMMAND="gcc -o $DIR_PATH/$FILE_NAME $WATCH_FILE"
 
