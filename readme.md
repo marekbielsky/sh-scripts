@@ -50,14 +50,34 @@ This repository contains shell scripts for automating tasks related to C program
 
 - **Description**: Automates the creation of multiple C source files with a basic template and compiles them.
 - **Usage**:
+
   ```bash
-  ./create_files.sh <ps_number> <task_from> <task_to>
+  ./create_files.sh <output_dir> <file_prefix> <task_from> <task_to>
   ```
-  This will create and compile C files named `zadanie<task_number>.c` in the directory `./ps<ps_number>/zadania/` for each task number in the specified range.
+
+- **Arguments**:
+
+  - `<output_dir>`: The directory where the C files will be created. If the directory does not exist, it will be created.
+  - `<file_prefix>`: The prefix for the generated C files (e.g., `zadanie`).
+  - `<task_from>`: The starting number for the task files (e.g., `1`).
+  - `<task_to>`: The ending number for the task files (e.g., `10`).
+
+- **Example**:
+
+  ```bash
+  ./create_files.sh ./ps1/zadania zadanie 1 10
+  ```
+
+  This command will create and compile C files named `zadanie1.c`, `zadanie2.c`, ..., `zadanie10.c` in the directory `./ps1/zadania/`.
+
 - **Features**:
+
   - Initializes a basic C program structure in each source file.
   - Compiles each source file into an executable.
   - Creates directories as needed to organize tasks by problem set number.
+
+- **Dependencies**:
+  - `gcc`: The GNU Compiler Collection for compiling C programs.
 
 #### Installation of GCC
 
@@ -70,12 +90,10 @@ This repository contains shell scripts for automating tasks related to C program
 - **Linux**: Install using a package manager
 
   - **Debian-based systems**:
-
     ```bash
     sudo apt-get update
     sudo apt-get install gcc
     ```
-
   - **Red Hat-based systems**:
     ```bash
     sudo yum install gcc
@@ -104,8 +122,8 @@ This repository contains shell scripts for automating tasks related to C program
    cd sh-scripts
    ```
 
-3. **Run a Script**:
-   Follow the usage instructions for each script to execute them.
+3. **Run the Script**:
+   Follow the usage instructions for the `create_files.sh` script to execute it.
 
 ## Contributing
 

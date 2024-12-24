@@ -1,25 +1,33 @@
 #!/bin/bash
 
-ps_number=$1
-task_from=$2
-task_to=$3
+output_dir=$1
+file_prefix=$2
+task_from=$3
+task_to=$4
 
-if [ -z "$ps_number" ] || [ -z "$task_from" ] || [ -z "$task_to" ]; then
-    echo "Usage: $0 <ps_number> <task_from> <task_to>"
+if [ -z "$output_dir" ] || [ -z "$file_prefix" ] || [ -z "$task_from" ] || [ -z "$task_to" ]; then
+    echo "Usage: $0 <output_dir> <file_prefix> <task_from> <task_to>"
     exit 1
 fi
 
-mkdir -p ./ps$ps_number/zadania
+mkdir -p "$output_dir"
 
 for i in $(seq $task_from $task_to); do
-    file_path="./ps$ps_number/zadania/zadanie$i.c"
-    executable_path="./ps$ps_number/zadania/zadanie$i"
+    file_path="$output_dir/${file_prefix}$i.c"
+    executable_path="$output_dir/${file_prefix}$i"
 
     cat <<EOL > "$file_path"
+/* 
+ * File: ${file_prefix}$i.c
+ * Description: This is a template for C files.
+ * Author: Marek Bielski (https://github.com/marekbielsky)
+ * Date: $(date +%Y-%m-%d)
+ */
+
 #include <stdio.h>
 
 int main() {
-    printf("To jest zadanie$i.c\n");
+    printf("This is ${file_prefix}$i.c\n");
     return 0;
 }
 EOL
