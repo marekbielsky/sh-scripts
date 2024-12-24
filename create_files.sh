@@ -16,13 +16,12 @@ for i in $(seq $task_from $task_to); do
     executable_path="./ps$ps_number/zadania/zadanie$i"
 
     cat <<EOL > "$file_path"
+#include <stdio.h>
 
-    #include <stdio.h>
-
-    int main() {
-        printf("To jest zadanie$i.c\n");
-        return 0;
-    }
+int main() {
+    printf("To jest zadanie$i.c\n");
+    return 0;
+}
 EOL
 
     gcc -o "$executable_path" "$file_path"
