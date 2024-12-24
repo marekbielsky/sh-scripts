@@ -58,17 +58,17 @@ This repository contains shell scripts for automating tasks related to C program
 - **Arguments**:
 
   - `<output_dir>`: The directory where the C files will be created. If the directory does not exist, it will be created.
-  - `<file_prefix>`: The prefix for the generated C files (e.g., `zadanie`).
+  - `<file_prefix>`: The prefix for the generated C files (e.g., `task`).
   - `<task_from>`: The starting number for the task files (e.g., `1`).
   - `<task_to>`: The ending number for the task files (e.g., `10`).
 
 - **Example**:
 
   ```bash
-  ./create_files.sh ./ps1/zadania zadanie 1 10
+  ./create_files.sh ./ps1/tasks task 1 10
   ```
 
-  This command will create and compile C files named `zadanie1.c`, `zadanie2.c`, ..., `zadanie10.c` in the directory `./ps1/zadania/`.
+  This command will create and compile C files named `task1.c`, `task2.c`, ..., `task10.c` in the directory `./ps1/tasks/`.
 
 - **Features**:
 
